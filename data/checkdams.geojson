@@ -1,0 +1,299 @@
+{
+  "type": "FeatureCollection",
+  "name": "CheckDam",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "xy_coordinate_resolution": 1e-05,
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "76\u00b046'3\"E, 10\u00b035'35\"N",
+        "name1": "Malampuzha Dam",
+        "Photo": "D:\\ExamData2024\\WebGIS\\Photo\\Malampuzha.jpg",
+        "tributary": "Kalpathipuzha River",
+        "dam_type": "Masonry Gravity & Earthen Dam",
+        "capacity": "226.0 MCM",
+        "purpose": "Irrigation, Drinking Water, Hydroelectric (2.5 MW)",
+        "district": "Palakkad",
+        "year": "1955",
+        "photo_url": "assets/images/dams/Malampuzha.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7675,
+          10.59306
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "76\u00b07'6\"E, 10\u00b048'25\"N",
+        "name1": "Kanjirapuzha Dam",
+        "Photo": "D:\\ExamData2024\\WebGIS\\Photo\\Kanjirapuzha.jpg",
+        "tributary": "Kanjirapuzha (Thoothapuzha Sub-basin)",
+        "dam_type": "Earth-cum-Masonry Dam",
+        "capacity": "70.8 MCM",
+        "purpose": "Irrigation & Command Area Development",
+        "district": "Palakkad",
+        "year": "1980",
+        "photo_url": "assets/images/dams/Kanjirapuzha.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.11833,
+          10.80694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "76\u00b037'32\"E, 10\u00b032'31\"N",
+        "name1": "Mangalam Dam",
+        "Photo": "D:\\ExamData2024\\WebGIS\\Photo\\Mangalam.jpg",
+        "tributary": "Cherukunnapuzha (Gayathripuzha Sub-basin)",
+        "dam_type": "Masonry Gravity Dam",
+        "capacity": "25.5 MCM",
+        "purpose": "Irrigation (Alathur Taluk)",
+        "district": "Palakkad",
+        "year": "1956",
+        "photo_url": "assets/images/dams/Mangalam.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.62556,
+          10.54194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "76\u00b047'50\"E, 10\u00b037'10\"N",
+        "name1": "Meenkara Dam",
+        "Photo": "D:\\ExamData2024\\WebGIS\\Photo\\Meenkara.jpg",
+        "tributary": "Meenkara / Gayathripuzha",
+        "dam_type": "Earth Dam with Masonry Spillway",
+        "capacity": "11.3 MCM",
+        "purpose": "Irrigation (Chittur & Alathur)",
+        "district": "Palakkad",
+        "year": "1960",
+        "photo_url": "assets/images/dams/Meenkara.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.79722,
+          10.61944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "76\u00b035'0\"E, 10\u00b028'45\"N",
+        "name1": "Pothundi Dam",
+        "Photo": "D:\\ExamData2024\\WebGIS\\Photo\\pothundi-dam-photo-from.jpg",
+        "tributary": "Ayalurpuzha (Gayathripuzha Sub-basin)",
+        "dam_type": "Coreless Earth Dam (Historical Engineering Marvel)",
+        "capacity": "50.9 MCM",
+        "purpose": "Irrigation & Nelliyampathy Foothills Water Supply",
+        "district": "Palakkad",
+        "year": "1968",
+        "photo_url": "assets/images/dams/pothundi-dam-photo-from.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.58333,
+          10.47917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "76\u00b032'18\"E, 10\u00b059'7\"N",
+        "name1": "Velliyankallu Dam",
+        "Photo": null,
+        "tributary": "Bharathapuzha Mainstem (Thrithala)",
+        "dam_type": "Barrage / Regulatory Check Dam",
+        "capacity": "5.5 MCM",
+        "purpose": "Saline Ingress Prevention & Drinking Water Barrier",
+        "district": "Palakkad / Malappuram",
+        "year": "2007",
+        "photo_url": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.53833,
+          10.98528
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "76\u00b041'1\"E, 10\u00b049'50\"N",
+        "name1": "Chulliyar dam",
+        "Photo": null,
+        "tributary": "Chulliyar River (Gayathripuzha)",
+        "dam_type": "Composite Earth Dam",
+        "capacity": "13.7 MCM",
+        "purpose": "Irrigation (Muthalamada)",
+        "district": "Palakkad",
+        "year": "1970",
+        "photo_url": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.68361,
+          10.83056
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "name1": "Mangalam Reservoir",
+        "Photo": null,
+        "tributary": "Cherukunnapuzha Basin",
+        "dam_type": "Storage Reservoir & Catchment",
+        "capacity": "25.5 MCM",
+        "purpose": "Water Resource Storage & Ecosystem Habitat",
+        "district": "Palakkad",
+        "year": "1956",
+        "photo_url": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.53486,
+          10.51579
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "name1": "Parambikulam Reservoir",
+        "Photo": null,
+        "tributary": "Parambikulam River (PAP Basin Divide)",
+        "dam_type": "Major Gravity Dam",
+        "capacity": "504.0 MCM",
+        "purpose": "Inter-State Water Sharing, Power & Wildlife Sanctuary",
+        "district": "Palakkad",
+        "year": "1967",
+        "photo_url": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.77333,
+          10.38761
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "name1": "Thunacadavu Reservoir",
+        "Photo": null,
+        "tributary": "Thunakadavu River (PAP Divide)",
+        "dam_type": "Balancing Reservoir",
+        "capacity": "15.8 MCM",
+        "purpose": "PAP System Tunnel Balancing",
+        "district": "Palakkad",
+        "year": "1965",
+        "photo_url": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.76788,
+          10.4459
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "name1": "Walayar Reservoir",
+        "Photo": null,
+        "tributary": "Walayar River (Kalpathipuzha)",
+        "dam_type": "Earthen Dam with Masonry Section",
+        "capacity": "18.4 MCM",
+        "purpose": "Irrigation in Palakkad-Tamil Nadu Border Belt",
+        "district": "Palakkad",
+        "year": "1964",
+        "photo_url": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.85364,
+          10.83542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "name1": "Nellimed Reservoir",
+        "Photo": null,
+        "tributary": "Chitturpuzha Sub-catchment",
+        "dam_type": "Percolation & Irrigation Tank",
+        "capacity": "2.2 MCM",
+        "purpose": "Groundwater Recharge & Lift Irrigation",
+        "district": "Palakkad",
+        "year": "1978",
+        "photo_url": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.82906,
+          10.66092
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "name1": "Servuvani Reservoir",
+        "Photo": null,
+        "tributary": "Siruvani River (Muthikulam Catchment)",
+        "dam_type": "Masonry Gravity Dam",
+        "capacity": "20.6 MCM",
+        "purpose": "Potable Drinking Water (Sweetest Water of Asia)",
+        "district": "Palakkad",
+        "year": "1984",
+        "photo_url": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.64511,
+          10.97409
+        ]
+      }
+    }
+  ]
+}
