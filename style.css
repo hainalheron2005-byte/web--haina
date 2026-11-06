@@ -1,31 +1,46 @@
 /* ==========================================================================
-   BHARATHAPUZHA RIVER BASIN WEBGIS PORTAL
+   BHARATHAPUZHA RIVER BASIN WEBGIS PORTAL - OFFICIAL GOVERNMENT & ACADEMIC THEME
+   State Environmental & Watershed Decision Support System
    Author: HAINA L. HERON | MSc Geography & Disaster Management
    Institution: Sree Sankaracharya University of Sanskrit, Kalady
    ========================================================================== */
 
 :root {
-  --primary-navy: #0f172a;
-  --secondary-navy: #1e293b;
+  /* Official Government Environmental Green Palette */
+  --gov-green-darkest: #022c22;
+  --gov-green-dark: #064e3b;
+  --gov-green-primary: #065f46;
+  --gov-green-accent: #047857;
+  --gov-green-emerald: #059669;
+  --gov-green-mint: #10b981;
+  --gov-green-light: #d1fae5;
+  --gov-green-subtle: #f0fdf4;
+  
+  /* Official Gold / Amber Accents */
+  --gov-gold: #d97706;
+  --gov-gold-light: #fbbf24;
+  --gov-gold-bg: #fffbeb;
+  
+  /* Supporting Shades */
   --brand-blue: #0284c7;
   --brand-blue-hover: #0369a1;
   --accent-cyan: #06b6d4;
-  --accent-teal: #0d9488;
-  --accent-emerald: #10b981;
-  --accent-amber: #f59e0b;
-  --accent-red: #ef4444;
+  --accent-red: #dc2626;
+  
+  /* Surfaces & Typography */
   --bg-main: #f8fafc;
   --bg-card: #ffffff;
-  --bg-glass: rgba(255, 255, 255, 0.85);
   --border-light: #e2e8f0;
-  --border-focus: #38bdf8;
+  --border-green: #a7f3d0;
   --text-main: #0f172a;
-  --text-muted: #64748b;
+  --text-muted: #475569;
   --text-white: #ffffff;
+  
+  /* Shadows & Radii */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
@@ -51,41 +66,86 @@ body {
   line-height: 1.6;
 }
 
-/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  color: var(--primary-navy);
+  color: var(--gov-green-darkest);
   line-height: 1.25;
 }
 
 a {
-  color: var(--brand-blue);
+  color: var(--gov-green-accent);
   text-decoration: none;
   transition: var(--transition);
 }
 
 a:hover {
-  color: var(--brand-blue-hover);
+  color: var(--gov-green-primary);
 }
 
 .container {
   width: 100%;
-  max-width: 1320px;
+  max-width: 1360px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
 /* ==========================================================================
-   NAVIGATION BAR
+   OFFICIAL GOVERNMENT TOP BAR & EMBLEM HEADER
    ========================================================================== */
+.official-top-bar {
+  background: var(--gov-green-darkest);
+  color: #a7f3d0;
+  font-size: 0.78rem;
+  padding: 6px 0;
+  border-bottom: 2px solid var(--gov-gold);
+  letter-spacing: 0.3px;
+}
+
+.official-top-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.official-left-flag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.official-left-flag i {
+  color: var(--gov-gold-light);
+}
+
+.official-right-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.official-right-links a {
+  color: #e2e8f0;
+  font-size: 0.76rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.official-right-links a:hover {
+  color: var(--gov-gold-light);
+}
+
+/* Main Navigation Bar */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gov-green-dark);
+  box-shadow: 0 4px 20px rgba(2, 44, 34, 0.4);
+  border-bottom: 3px solid var(--gov-gold);
   transition: var(--transition);
 }
 
@@ -93,75 +153,83 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 78px;
 }
 
 .brand-wrapper {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
-.brand-icon {
-  width: 44px;
-  height: 44px;
-  background: linear-gradient(135deg, var(--accent-cyan), var(--brand-blue));
+.brand-emblem-badge {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--gov-gold-light), var(--gov-gold));
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 20px;
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+  color: var(--gov-green-darkest);
+  font-size: 24px;
+  box-shadow: 0 0 16px rgba(251, 191, 36, 0.4);
+  border: 2px solid #ffffff;
 }
 
 .brand-title {
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--text-white);
-  letter-spacing: -0.5px;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+  text-transform: uppercase;
 }
 
 .brand-subtitle {
-  font-size: 0.75rem;
-  color: var(--accent-cyan);
+  font-size: 0.74rem;
+  color: #a7f3d0;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+
+.brand-malayalam {
+  font-size: 0.7rem;
+  color: var(--gov-gold-light);
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.15rem;
   list-style: none;
 }
 
 .nav-link {
-  color: #cbd5e1;
-  font-size: 0.88rem;
+  color: #e2e8f0;
+  font-size: 0.86rem;
   font-weight: 600;
-  padding: 6px 10px;
+  padding: 8px 12px;
   border-radius: var(--radius-sm);
   transition: var(--transition);
 }
 
 .nav-link:hover, .nav-link.active {
-  color: var(--text-white);
-  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .nav-cta {
-  background: linear-gradient(135deg, var(--brand-blue), var(--accent-teal));
-  color: white !important;
-  padding: 8px 18px !important;
+  background: linear-gradient(135deg, var(--gov-gold), #b45309);
+  color: #ffffff !important;
+  padding: 9px 20px !important;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.4);
 }
 
 .nav-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.45);
+  box-shadow: 0 6px 18px rgba(217, 119, 6, 0.55);
 }
 
 .mobile-toggle {
@@ -169,92 +237,95 @@ a:hover {
   background: none;
   border: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   cursor: pointer;
 }
 
 /* ==========================================================================
-   HERO / BANNER SECTION
+   OFFICIAL HERO BANNER SECTION (GREEN GRADIENT + WATER LANDSCAPE)
    ========================================================================== */
 .hero-section {
   position: relative;
-  min-height: 580px;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(30, 41, 59, 0.82)),
+  min-height: 600px;
+  background: linear-gradient(135deg, rgba(2, 44, 34, 0.94), rgba(6, 78, 59, 0.88), rgba(4, 120, 87, 0.82)),
               url('assets/images/banner.jpg') center/cover no-repeat;
   color: white;
   display: flex;
   align-items: center;
   padding: 5rem 0 4rem;
   overflow: hidden;
+  border-bottom: 4px solid var(--gov-gold);
 }
 
 .hero-overlay-grid {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 24px 24px;
-  opacity: 0.6;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.5;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 950px;
 }
 
-.academic-badge {
+.official-seal-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(6, 182, 212, 0.15);
-  border: 1px solid rgba(6, 182, 212, 0.4);
-  color: var(--accent-cyan);
-  padding: 6px 16px;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  color: var(--gov-gold-light);
+  padding: 7px 18px;
   border-radius: var(--radius-full);
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.8px;
 }
 
 .hero-title {
-  font-size: 2.75rem;
+  font-size: 2.85rem;
   font-weight: 900;
   line-height: 1.15;
-  color: white;
+  color: #ffffff;
   margin-bottom: 1.25rem;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 .hero-title span {
-  background: linear-gradient(135deg, #38bdf8, #34d399);
+  background: linear-gradient(135deg, #a7f3d0, var(--gov-gold-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero-lead {
   font-size: 1.15rem;
-  color: #e2e8f0;
+  color: #f0fdf4;
   margin-bottom: 2rem;
-  max-width: 820px;
+  max-width: 860px;
   line-height: 1.7;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.75rem;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.95rem;
-  padding: 12px 26px;
+  padding: 12px 28px;
   border-radius: var(--radius-md);
   border: none;
   cursor: pointer;
@@ -262,31 +333,32 @@ a:hover {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--brand-blue), var(--accent-teal));
+  background: linear-gradient(135deg, var(--gov-gold), #b45309);
   color: white;
-  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
+  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.45);
+  border: 1px solid #fde68a;
 }
 
 .btn-primary:hover {
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(2, 132, 199, 0.5);
+  box-shadow: 0 8px 25px rgba(217, 119, 6, 0.6);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.15);
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.28);
   color: white;
   transform: translateY(-2px);
 }
 
-/* Quick Metrics Bar */
+/* Green Official Metrics Bar */
 .metrics-strip {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -295,27 +367,28 @@ a:hover {
 }
 
 .metric-card {
-  background: rgba(15, 23, 42, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  padding: 14px 18px;
+  background: rgba(2, 44, 34, 0.85);
+  border: 1px solid rgba(167, 243, 208, 0.3);
+  backdrop-filter: blur(12px);
+  padding: 16px 20px;
   border-radius: var(--radius-md);
-  border-left: 3px solid var(--accent-cyan);
+  border-left: 4px solid var(--gov-gold-light);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .metric-num {
-  font-size: 1.6rem;
+  font-size: 1.75rem;
   font-weight: 800;
-  color: white;
+  color: #ffffff;
   font-family: 'Montserrat', sans-serif;
 }
 
 .metric-label {
   font-size: 0.78rem;
-  color: #94a3b8;
-  font-weight: 500;
+  color: #a7f3d0;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.5px;
 }
 
 /* ==========================================================================
@@ -327,23 +400,27 @@ section {
 
 .section-header {
   text-align: center;
-  max-width: 800px;
+  max-width: 820px;
   margin: 0 auto 3.5rem;
 }
 
 .section-tag {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--brand-blue);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--gov-green-accent);
+  background: var(--gov-green-light);
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
   text-transform: uppercase;
-  letter-spacing: 1.2px;
-  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
 }
 
 .section-title {
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   margin-bottom: 1rem;
+  color: var(--gov-green-darkest);
 }
 
 .section-desc {
@@ -352,47 +429,49 @@ section {
 }
 
 /* ==========================================================================
-   BASIN OVERVIEW & PHYSIOGRAPHY
+   SECTION: BASIN PROFILE & PHYSIOGRAPHY
    ========================================================================== */
 .overview-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
 }
 
 .info-card {
   background: var(--bg-card);
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border-green);
   border-radius: var(--radius-lg);
-  padding: 2rem;
+  padding: 2.25rem;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  border-top: 4px solid var(--gov-green-accent);
 }
 
 .info-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: #cbd5e1;
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--gov-green-mint);
 }
 
 .card-icon-bubble {
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-radius: var(--radius-md);
-  background: rgba(2, 132, 199, 0.1);
-  color: var(--brand-blue);
+  background: var(--gov-green-light);
+  color: var(--gov-green-dark);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 1.25rem;
 }
 
 .card-title {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   margin-bottom: 0.75rem;
+  color: var(--gov-green-darkest);
 }
 
 .card-body {
@@ -403,13 +482,13 @@ section {
 
 .spec-list {
   list-style: none;
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 
 .spec-list li {
   display: flex;
   justify-content: space-between;
-  padding: 6px 0;
+  padding: 8px 0;
   border-bottom: 1px dashed var(--border-light);
   font-size: 0.9rem;
 }
@@ -425,16 +504,18 @@ section {
 
 .spec-val {
   font-weight: 700;
-  color: var(--primary-navy);
+  color: var(--gov-green-darkest);
 }
 
 /* ==========================================================================
-   INTERACTIVE WEBGIS WORKSTATION
+   OFFICIAL INTERACTIVE WEBGIS WORKSTATION
    ========================================================================== */
 .webgis-section {
-  background: #0b1120;
-  padding: 4rem 0 5rem;
+  background: #022c22;
+  padding: 4.5rem 0 5.5rem;
   color: white;
+  border-top: 4px solid var(--gov-gold);
+  border-bottom: 4px solid var(--gov-gold);
 }
 
 .webgis-container {
@@ -446,22 +527,22 @@ section {
 
 .map-wrapper {
   position: relative;
-  height: 720px;
+  height: 740px;
   width: 100%;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--gov-gold);
 }
 
 #map {
   width: 100%;
   height: 100%;
-  background: #1e293b;
+  background: #064e3b;
   z-index: 1;
 }
 
-/* Floating Map Control Bar (Top) */
+/* Top Toolbar */
 .map-top-bar {
   position: absolute;
   top: 16px;
@@ -478,64 +559,64 @@ section {
 .map-search-box {
   pointer-events: auto;
   position: relative;
-  width: 320px;
+  width: 340px;
 }
 
 .map-search-box input {
   width: 100%;
-  padding: 10px 16px 10px 40px;
-  background: rgba(15, 23, 42, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 11px 16px 11px 42px;
+  background: rgba(2, 44, 34, 0.92);
+  border: 1px solid var(--gov-gold);
   border-radius: var(--radius-full);
   color: white;
   font-size: 0.88rem;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   outline: none;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   transition: var(--transition);
 }
 
 .map-search-box input:focus {
-  border-color: var(--accent-cyan);
-  background: rgba(15, 23, 42, 0.98);
+  border-color: var(--gov-gold-light);
+  background: rgba(2, 44, 34, 0.98);
 }
 
 .map-search-box i {
   position: absolute;
-  left: 14px;
+  left: 16px;
   top: 50%;
   transform: translateY(-50%);
-  color: #94a3b8;
-  font-size: 0.9rem;
+  color: var(--gov-gold-light);
+  font-size: 0.95rem;
 }
 
 .search-results {
   position: absolute;
-  top: 46px;
+  top: 48px;
   left: 0;
   right: 0;
-  background: rgba(15, 23, 42, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(2, 44, 34, 0.96);
+  border: 1px solid var(--gov-gold);
   border-radius: var(--radius-md);
   max-height: 250px;
   overflow-y: auto;
   display: none;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
   box-shadow: var(--shadow-xl);
 }
 
 .search-item {
-  padding: 8px 14px;
+  padding: 10px 14px;
   cursor: pointer;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.85rem;
-  color: #e2e8f0;
+  color: #f0fdf4;
   transition: var(--transition);
 }
 
 .search-item:hover {
-  background: rgba(2, 132, 199, 0.3);
-  color: white;
+  background: rgba(5, 150, 105, 0.4);
+  color: #ffffff;
 }
 
 .map-tool-buttons {
@@ -546,40 +627,42 @@ section {
 }
 
 .tool-btn {
-  background: rgba(15, 23, 42, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(2, 44, 34, 0.92);
+  border: 1px solid var(--gov-gold);
   color: white;
-  padding: 8px 14px;
+  padding: 9px 16px;
   border-radius: var(--radius-full);
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.84rem;
+  font-weight: 700;
   cursor: pointer;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   gap: 6px;
   transition: var(--transition);
+  box-shadow: var(--shadow-md);
 }
 
 .tool-btn:hover, .tool-btn.active {
-  background: var(--brand-blue);
-  border-color: var(--brand-blue);
-  box-shadow: 0 0 12px rgba(2, 132, 199, 0.5);
+  background: var(--gov-gold);
+  color: var(--gov-green-darkest);
+  border-color: var(--gov-gold-light);
+  box-shadow: 0 0 14px rgba(251, 191, 36, 0.6);
 }
 
 /* Layer Control Side Drawer */
 .gis-sidebar {
   position: absolute;
-  top: 70px;
+  top: 72px;
   left: 16px;
   bottom: 40px;
   width: 320px;
-  background: rgba(15, 23, 42, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(2, 44, 34, 0.94);
+  border: 1px solid var(--gov-gold);
   border-radius: var(--radius-md);
   backdrop-filter: blur(16px);
   z-index: 500;
-  padding: 1.25rem;
+  padding: 1.35rem;
   overflow-y: auto;
   box-shadow: var(--shadow-xl);
   transition: var(--transition);
@@ -591,14 +674,14 @@ section {
 
 .sidebar-toggle-btn {
   position: absolute;
-  top: 70px;
+  top: 72px;
   left: 16px;
   z-index: 501;
-  background: var(--primary-navy);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--gov-green-dark);
+  border: 1px solid var(--gov-gold);
   color: white;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -612,20 +695,22 @@ section {
   left: auto;
   right: 12px;
   top: 12px;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   background: rgba(255, 255, 255, 0.1);
   border: none;
 }
 
 .sidebar-title {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--accent-cyan);
+  color: var(--gov-gold-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .layer-group {
@@ -635,11 +720,11 @@ section {
 .group-title {
   font-size: 0.76rem;
   text-transform: uppercase;
-  color: #94a3b8;
-  font-weight: 700;
-  letter-spacing: 0.6px;
+  color: #a7f3d0;
+  font-weight: 800;
+  letter-spacing: 0.8px;
   margin-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(167, 243, 208, 0.2);
   padding-bottom: 4px;
 }
 
@@ -647,20 +732,20 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 4px;
+  padding: 7px 6px;
   border-radius: var(--radius-sm);
   transition: var(--transition);
 }
 
 .layer-item:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .layer-label {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   cursor: pointer;
   color: #f1f5f9;
 }
@@ -681,26 +766,26 @@ section {
 .opacity-slider-box label {
   display: flex;
   justify-content: space-between;
-  font-size: 0.78rem;
-  color: #94a3b8;
+  font-size: 0.8rem;
+  color: #a7f3d0;
   margin-bottom: 4px;
 }
 
 .opacity-slider-box input[type="range"] {
   width: 100%;
-  accent-color: var(--accent-cyan);
+  accent-color: var(--gov-gold);
 }
 
-/* Floating North Arrow */
+/* North Arrow */
 .north-arrow-control {
   position: absolute;
   top: 80px;
   right: 18px;
   z-index: 450;
-  width: 48px;
-  height: 48px;
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 50px;
+  height: 50px;
+  background: rgba(2, 44, 34, 0.9);
+  border: 1px solid var(--gov-gold);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -711,68 +796,67 @@ section {
 }
 
 .compass-dial {
-  font-size: 24px;
-  color: #38bdf8;
-  filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.5));
+  font-size: 26px;
+  color: var(--gov-gold-light);
+  filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.6));
 }
 
-/* Coordinates & Status Ticker (Bottom) */
+/* Bottom Bar */
 .map-bottom-bar {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 32px;
-  background: rgba(15, 23, 42, 0.95);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  height: 34px;
+  background: var(--gov-green-darkest);
+  border-top: 1px solid var(--gov-gold);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
-  font-size: 0.76rem;
-  color: #94a3b8;
+  font-size: 0.78rem;
+  color: #a7f3d0;
   z-index: 500;
   font-family: 'Fira Code', monospace;
 }
 
-.coord-display {
-  color: #38bdf8;
-  font-weight: 500;
+.coord-display b {
+  color: var(--gov-gold-light);
 }
 
-/* Dynamic Map Legend (Bottom Right) */
+/* Dynamic Map Legend */
 .map-legend-panel {
   position: absolute;
-  bottom: 42px;
+  bottom: 46px;
   right: 16px;
-  background: rgba(15, 23, 42, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(2, 44, 34, 0.94);
+  border: 1px solid var(--gov-gold);
   border-radius: var(--radius-md);
-  padding: 12px 16px;
+  padding: 12px 18px;
   backdrop-filter: blur(12px);
   z-index: 500;
-  max-width: 280px;
-  max-height: 280px;
+  max-width: 290px;
+  max-height: 290px;
   overflow-y: auto;
-  font-size: 0.8rem;
-  box-shadow: var(--shadow-lg);
+  font-size: 0.82rem;
+  box-shadow: var(--shadow-xl);
 }
 
 .legend-title {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--accent-cyan);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--gov-gold-light);
   margin-bottom: 8px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 4px;
-  color: #cbd5e1;
+  margin-bottom: 5px;
+  color: #e2e8f0;
 }
 
 .legend-symbol {
@@ -790,12 +874,12 @@ section {
 
 /* Feature Popup Styles */
 .leaflet-popup-content-wrapper {
-  background: rgba(15, 23, 42, 0.95) !important;
+  background: rgba(2, 44, 34, 0.96) !important;
   color: white !important;
   border-radius: var(--radius-md) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid var(--gov-gold) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6) !important;
   padding: 0 !important;
   overflow: hidden;
 }
@@ -806,43 +890,44 @@ section {
 }
 
 .leaflet-popup-tip {
-  background: rgba(15, 23, 42, 0.95) !important;
+  background: var(--gov-green-darkest) !important;
 }
 
 .popup-card {
-  min-width: 260px;
+  min-width: 270px;
   max-width: 320px;
 }
 
 .popup-img {
   width: 100%;
-  height: 150px;
+  height: 160px;
   object-fit: cover;
   display: block;
+  border-bottom: 2px solid var(--gov-gold);
 }
 
 .popup-header {
-  padding: 12px 14px;
-  background: rgba(2, 132, 199, 0.2);
+  padding: 12px 16px;
+  background: rgba(6, 78, 59, 0.7);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .popup-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #38bdf8;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--gov-gold-light);
   margin: 0;
 }
 
 .popup-subtitle {
   font-size: 0.76rem;
-  color: #94a3b8;
+  color: #a7f3d0;
   text-transform: uppercase;
 }
 
 .popup-body {
-  padding: 12px 14px;
-  font-size: 0.85rem;
+  padding: 12px 16px;
+  font-size: 0.86rem;
 }
 
 .popup-table {
@@ -851,35 +936,35 @@ section {
 }
 
 .popup-table td {
-  padding: 4px 0;
+  padding: 5px 0;
   border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
 }
 
 .popup-table td.key {
-  color: #94a3b8;
+  color: #a7f3d0;
   width: 45%;
 }
 
 .popup-table td.val {
-  color: white;
+  color: #ffffff;
   font-weight: 600;
   text-align: right;
 }
 
-/* Pulsing Dam Pin Marker */
+/* Dam Pulse Pin */
 .dam-pulse-pin {
   position: relative;
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   background: #ef4444;
   border: 2px solid white;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .dam-pulse-pin::after {
@@ -897,16 +982,109 @@ section {
 }
 
 /* ==========================================================================
-   SPATIAL DATABASE TABLE SECTION
+   SECTION: DAM PHOTOGRAPHIC SHOWCASE (OFFICIAL GALLERY)
+   ========================================================================== */
+.dam-showcase-section {
+  background: #ffffff;
+}
+
+.dam-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+.dam-photo-card {
+  background: #ffffff;
+  border: 1px solid var(--border-green);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.dam-photo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--gov-green-mint);
+}
+
+.dam-photo-wrap {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+  background: #022c22;
+}
+
+.dam-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.dam-photo-card:hover .dam-photo-img {
+  transform: scale(1.08);
+}
+
+.dam-photo-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(2, 44, 34, 0.85);
+  color: var(--gov-gold-light);
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--gov-gold);
+}
+
+.dam-photo-info {
+  padding: 1.25rem 1.5rem;
+  flex-grow: 1;
+}
+
+.dam-name-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--gov-green-darkest);
+  margin-bottom: 4px;
+}
+
+.dam-sub-text {
+  font-size: 0.82rem;
+  color: var(--gov-green-accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.dam-specs-table {
+  width: 100%;
+  font-size: 0.82rem;
+  border-collapse: collapse;
+}
+
+.dam-specs-table td {
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--border-light);
+}
+
+/* ==========================================================================
+   SECTION: SPATIAL DATABASE TABLE
    ========================================================================== */
 .database-section {
-  background: var(--bg-card);
+  background: var(--gov-green-subtle);
+  border-top: 1px solid var(--border-green);
+  border-bottom: 1px solid var(--border-green);
 }
 
 .tab-nav {
   display: flex;
   gap: 8px;
-  border-bottom: 2px solid var(--border-light);
+  border-bottom: 2px solid var(--border-green);
   margin-bottom: 1.5rem;
   overflow-x: auto;
   padding-bottom: 4px;
@@ -915,9 +1093,9 @@ section {
 .tab-btn {
   background: none;
   border: none;
-  padding: 10px 18px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  padding: 11px 20px;
+  font-size: 0.92rem;
+  font-weight: 700;
   color: var(--text-muted);
   cursor: pointer;
   border-radius: var(--radius-sm);
@@ -926,14 +1104,14 @@ section {
 }
 
 .tab-btn:hover {
-  color: var(--brand-blue);
-  background: rgba(2, 132, 199, 0.05);
+  color: var(--gov-green-dark);
+  background: var(--gov-green-light);
 }
 
 .tab-btn.active {
-  color: var(--brand-blue);
-  border-bottom: 3px solid var(--brand-blue);
-  border-radius: 0;
+  color: #ffffff;
+  background: var(--gov-green-primary);
+  border-radius: var(--radius-sm);
 }
 
 .table-controls {
@@ -946,19 +1124,21 @@ section {
 }
 
 .table-search {
-  padding: 8px 14px;
-  border: 1px solid var(--border-light);
+  padding: 9px 16px;
+  border: 1px solid var(--border-green);
   border-radius: var(--radius-sm);
   font-size: 0.88rem;
-  width: 260px;
+  width: 280px;
+  background: #ffffff;
 }
 
 .table-responsive {
   width: 100%;
   overflow-x: auto;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border-green);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
+  background: #ffffff;
 }
 
 .gis-table {
@@ -969,28 +1149,28 @@ section {
 }
 
 .gis-table th {
-  background: #f1f5f9;
-  padding: 12px 14px;
+  background: var(--gov-green-darkest);
+  color: #ffffff;
+  padding: 13px 16px;
   font-weight: 700;
-  color: var(--primary-navy);
-  border-bottom: 2px solid var(--border-light);
+  border-bottom: 2px solid var(--gov-gold);
 }
 
 .gis-table td {
-  padding: 10px 14px;
+  padding: 11px 16px;
   border-bottom: 1px solid var(--border-light);
   color: var(--text-main);
 }
 
 .gis-table tr:hover {
-  background: #f8fafc;
+  background: var(--gov-green-subtle);
 }
 
 /* ==========================================================================
-   MAP GALLERY SECTION
+   SECTION: MAP GALLERY
    ========================================================================== */
 .gallery-section {
-  background: #f1f5f9;
+  background: #ffffff;
 }
 
 .gallery-grid {
@@ -1004,7 +1184,7 @@ section {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border-green);
   transition: var(--transition);
   display: flex;
   flex-direction: column;
@@ -1013,13 +1193,14 @@ section {
 .gallery-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-xl);
+  border-color: var(--gov-green-mint);
 }
 
 .gallery-thumb-wrap {
   position: relative;
-  height: 240px;
+  height: 250px;
   overflow: hidden;
-  background: #0f172a;
+  background: var(--gov-green-darkest);
 }
 
 .gallery-thumb {
@@ -1036,11 +1217,11 @@ section {
 .gallery-overlay-btn {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.4);
+  background: rgba(2, 44, 34, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
   opacity: 0;
   transition: var(--transition);
 }
@@ -1050,22 +1231,22 @@ section {
 }
 
 .overlay-icon-btn {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background: white;
-  color: var(--primary-navy);
+  background: #ffffff;
+  color: var(--gov-green-darkest);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: var(--shadow-md);
   cursor: pointer;
   transition: var(--transition);
 }
 
 .overlay-icon-btn:hover {
-  background: var(--brand-blue);
+  background: var(--gov-gold);
   color: white;
   transform: scale(1.1);
 }
@@ -1080,15 +1261,20 @@ section {
 .gallery-badge {
   display: inline-block;
   font-size: 0.74rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  color: var(--brand-blue);
-  margin-bottom: 0.5rem;
+  color: var(--gov-green-accent);
+  background: var(--gov-green-light);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.6rem;
+  width: fit-content;
 }
 
 .gallery-title {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  color: var(--gov-green-darkest);
 }
 
 .gallery-desc {
@@ -1109,7 +1295,7 @@ section {
 .lightbox-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(0, 0, 0, 0.94);
   z-index: 2000;
   display: none;
   align-items: center;
@@ -1136,32 +1322,33 @@ section {
   object-fit: contain;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-xl);
+  border: 2px solid var(--gov-gold);
 }
 
 .lightbox-caption {
   color: white;
   margin-top: 1rem;
   text-align: center;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: 700;
 }
 
 .lightbox-close {
   position: absolute;
-  top: -40px;
+  top: -42px;
   right: 0;
   color: white;
-  font-size: 2rem;
+  font-size: 2.2rem;
   background: none;
   border: none;
   cursor: pointer;
 }
 
 /* ==========================================================================
-   ENVIRONMENTAL ANALYSIS DASHBOARD (CHART.JS)
+   SECTION: ENVIRONMENTAL ANALYTICS DASHBOARD
    ========================================================================== */
 .analytics-section {
-  background: var(--bg-main);
+  background: var(--gov-green-subtle);
 }
 
 .analytics-grid {
@@ -1175,8 +1362,9 @@ section {
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   padding: 1.75rem;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border-green);
   box-shadow: var(--shadow-sm);
+  border-top: 4px solid var(--gov-green-primary);
 }
 
 .chart-header {
@@ -1187,22 +1375,23 @@ section {
 }
 
 .chart-title {
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--gov-green-darkest);
 }
 
 .chart-badge {
   font-size: 0.74rem;
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: var(--radius-full);
-  background: rgba(2, 132, 199, 0.1);
-  color: var(--brand-blue);
-  font-weight: 600;
+  background: var(--gov-green-light);
+  color: var(--gov-green-dark);
+  font-weight: 700;
 }
 
 .chart-box {
   position: relative;
-  height: 300px;
+  height: 310px;
   width: 100%;
 }
 
@@ -1215,48 +1404,36 @@ section {
 
 .stat-metric-box {
   background: var(--bg-card);
-  border-left: 4px solid var(--brand-blue);
+  border-left: 4px solid var(--gov-green-primary);
   padding: 1.5rem;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border-green);
   border-left-width: 4px;
 }
 
-.stat-metric-box.green {
-  border-left-color: var(--accent-emerald);
-}
-
-.stat-metric-box.amber {
-  border-left-color: var(--accent-amber);
-}
-
-.stat-metric-box.cyan {
-  border-left-color: var(--accent-cyan);
-}
-
 .stat-val {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--primary-navy);
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: var(--gov-green-darkest);
 }
 
 .stat-title {
   font-size: 0.82rem;
-  color: var(--text-muted);
+  color: var(--gov-green-accent);
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 4px;
 }
 
 .stat-desc {
-  font-size: 0.82rem;
-  color: #64748b;
+  font-size: 0.84rem;
+  color: var(--text-muted);
   margin-top: 6px;
 }
 
 /* ==========================================================================
-   DISASTER MANAGEMENT SECTION
+   SECTION: DISASTER RISK REDUCTION (DRR)
    ========================================================================== */
 .disaster-section {
   background: #ffffff;
@@ -1273,53 +1450,54 @@ section {
   background: #fff;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
-  padding: 2rem;
+  padding: 2.25rem;
   box-shadow: var(--shadow-sm);
   border-top: 4px solid var(--accent-red);
   transition: var(--transition);
 }
 
 .hazard-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
 }
 
 .hazard-icon {
-  width: 48px;
-  height: 48px;
-  background: rgba(239, 68, 68, 0.1);
+  width: 52px;
+  height: 52px;
+  background: rgba(220, 38, 38, 0.1);
   color: var(--accent-red);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin-bottom: 1.25rem;
 }
 
 .hazard-title {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   margin-bottom: 0.75rem;
+  color: var(--gov-green-darkest);
 }
 
 .hazard-desc {
   color: var(--text-muted);
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   line-height: 1.7;
 }
 
-/* DRR Framework 4-Phase Tabs / Grid */
 .drr-framework-box {
-  background: #f8fafc;
-  border: 1px solid var(--border-light);
+  background: var(--gov-green-subtle);
+  border: 1px solid var(--border-green);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   margin-top: 2rem;
+  border-left: 5px solid var(--gov-green-primary);
 }
 
 .drr-phases {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
@@ -1328,28 +1506,28 @@ section {
   background: white;
   border-radius: var(--radius-md);
   padding: 1.5rem;
-  border: 1px solid var(--border-light);
-  border-top: 3px solid var(--accent-teal);
+  border: 1px solid var(--border-green);
+  border-top: 3px solid var(--gov-green-accent);
 }
 
 .drr-phase-title {
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 0.5rem;
-  color: var(--primary-navy);
+  color: var(--gov-green-darkest);
 }
 
 .drr-phase-desc {
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   color: var(--text-muted);
   line-height: 1.6;
 }
 
 /* ==========================================================================
-   REFERENCES SECTION
+   SECTION: REFERENCES
    ========================================================================== */
 .references-section {
-  background: #f1f5f9;
+  background: var(--gov-green-subtle);
 }
 
 .ref-list {
@@ -1361,9 +1539,9 @@ section {
 
 .ref-item {
   background: white;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border-green);
   border-radius: var(--radius-md);
-  padding: 1.25rem 1.5rem;
+  padding: 1.25rem 1.75rem;
   display: flex;
   gap: 16px;
   align-items: flex-start;
@@ -1371,16 +1549,16 @@ section {
 }
 
 .ref-num {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: var(--brand-blue);
+  background: var(--gov-green-primary);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: 0.85rem;
+  font-weight: 800;
   flex-shrink: 0;
 }
 
@@ -1394,57 +1572,60 @@ section {
    DEVELOPER SECTION & CREDITS
    ========================================================================== */
 .developer-section {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background: linear-gradient(135deg, var(--gov-green-darkest), var(--gov-green-dark));
   color: white;
-  padding: 5rem 0;
+  padding: 5.5rem 0;
+  border-top: 4px solid var(--gov-gold);
 }
 
 .developer-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid var(--gov-gold);
   border-radius: var(--radius-lg);
-  padding: 3rem;
-  backdrop-filter: blur(12px);
+  padding: 3.25rem;
+  backdrop-filter: blur(14px);
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 2.5rem;
+  gap: 2.75rem;
   align-items: center;
   box-shadow: var(--shadow-xl);
 }
 
 .dev-avatar-wrap {
-  width: 130px;
-  height: 130px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-cyan), var(--brand-blue));
+  background: linear-gradient(135deg, var(--gov-gold-light), var(--gov-gold));
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3.5rem;
-  color: white;
-  border: 4px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 25px rgba(6, 182, 212, 0.4);
+  font-size: 4rem;
+  color: var(--gov-green-darkest);
+  border: 4px solid #ffffff;
+  box-shadow: 0 0 30px rgba(251, 191, 36, 0.5);
 }
 
 .dev-name {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 2.2rem;
+  font-weight: 900;
   color: white;
   margin-bottom: 0.25rem;
 }
 
 .dev-role {
-  font-size: 1.05rem;
-  color: var(--accent-cyan);
-  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--gov-gold-light);
+  font-weight: 700;
   margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
 }
 
 .dev-institution {
-  font-size: 0.95rem;
-  color: #cbd5e1;
+  font-size: 0.98rem;
+  color: #f0fdf4;
   margin-bottom: 1.5rem;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .dev-credentials-row {
@@ -1457,21 +1638,22 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 7px 16px;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: #e2e8f0;
 }
 
 /* ==========================================================================
-   FOOTER
+   OFFICIAL FOOTER
    ========================================================================== */
 .footer {
-  background: #090d16;
-  color: #94a3b8;
-  padding: 3.5rem 0 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #021a14;
+  color: #a7f3d0;
+  padding: 4rem 0 1.5rem;
+  border-top: 3px solid var(--gov-gold);
   font-size: 0.88rem;
 }
 
@@ -1483,10 +1665,13 @@ section {
 }
 
 .footer-col h4 {
-  color: white;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
+  color: #ffffff;
+  font-size: 1.05rem;
+  margin-bottom: 1.1rem;
+  font-weight: 800;
+  border-bottom: 2px solid var(--gov-gold);
+  padding-bottom: 6px;
+  display: inline-block;
 }
 
 .footer-links {
@@ -1498,17 +1683,17 @@ section {
 }
 
 .footer-links a {
-  color: #94a3b8;
+  color: #a7f3d0;
   transition: var(--transition);
 }
 
 .footer-links a:hover {
-  color: var(--accent-cyan);
+  color: var(--gov-gold-light);
   padding-left: 4px;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(167, 243, 208, 0.15);
   padding-top: 1.5rem;
   display: flex;
   justify-content: space-between;
@@ -1522,7 +1707,7 @@ section {
    RESPONSIVE DESIGN (TABLETS & MOBILE)
    ========================================================================== */
 @media (max-width: 1024px) {
-  .hero-title { font-size: 2.2rem; }
+  .hero-title { font-size: 2.3rem; }
   .analytics-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -1530,22 +1715,22 @@ section {
 @media (max-width: 768px) {
   .nav-menu {
     position: fixed;
-    top: 72px;
+    top: 110px;
     left: 0;
     right: 0;
-    background: #0f172a;
+    background: var(--gov-green-darkest);
     flex-direction: column;
     padding: 1.5rem;
     gap: 1rem;
     display: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 3px solid var(--gov-gold);
   }
   .nav-menu.show { display: flex; }
   .mobile-toggle { display: block; }
   .hero-section { min-height: auto; padding: 3rem 0; }
-  .hero-title { font-size: 1.8rem; }
+  .hero-title { font-size: 1.85rem; }
   .hero-lead { font-size: 1rem; }
-  .map-wrapper { height: 550px; }
+  .map-wrapper { height: 560px; }
   .gis-sidebar { width: 280px; }
   .map-search-box { width: 200px; }
   .developer-card { grid-template-columns: 1fr; text-align: center; }
