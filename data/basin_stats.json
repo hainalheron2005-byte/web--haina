@@ -1,0 +1,353 @@
+{
+  "basin": {
+    "features": [
+      {
+        "WSNAME": "BHARATHAPUZHA",
+        "WSCODE": "20B4w",
+        "WSCODE1": "20B4w",
+        "AREA_FIELD": 1601.0827123166,
+        "GEOM_AREA_SQKM": 1601.1235501455997,
+        "PERIMETER": 446.358867756,
+        "NRIS": "20-02-04-23"
+      },
+      {
+        "WSNAME": "BHARATHAPUZHA",
+        "WSCODE": "20B4w",
+        "WSCODE1": "20B4w",
+        "AREA_FIELD": 1563.47859358949,
+        "GEOM_AREA_SQKM": 1563.1631881079813,
+        "PERIMETER": 446.358867756,
+        "NRIS": "20-02-04-23"
+      },
+      {
+        "WSNAME": "BHARATHAPUZHA",
+        "WSCODE": "20B4w",
+        "WSCODE1": "20B4w",
+        "AREA_FIELD": 40.09677291846,
+        "GEOM_AREA_SQKM": 40.08992462773309,
+        "PERIMETER": 446.358867756,
+        "NRIS": "20-02-04-23"
+      }
+    ],
+    "total_area_sqkm": 3204.66
+  },
+  "checkdams": [
+    {
+      "Name": "76\u00b046'3\"E, 10\u00b035'35\"N",
+      "name1": "Malampuzha Dam",
+      "Photo": "D:\\ExamData2024\\WebGIS\\Photo\\Malampuzha.jpg",
+      "lon": 76.76749999999961,
+      "lat": 10.593055555555544
+    },
+    {
+      "Name": "76\u00b07'6\"E, 10\u00b048'25\"N",
+      "name1": "Kanjirapuzha Dam",
+      "Photo": "D:\\ExamData2024\\WebGIS\\Photo\\Kanjirapuzha.jpg",
+      "lon": 76.11833333333333,
+      "lat": 10.806944444444447
+    },
+    {
+      "Name": "76\u00b037'32\"E, 10\u00b032'31\"N",
+      "name1": "Mangalam Dam",
+      "Photo": "D:\\ExamData2024\\WebGIS\\Photo\\Mangalam.jpg",
+      "lon": 76.62555555555535,
+      "lat": 10.541944444444443
+    },
+    {
+      "Name": "76\u00b047'50\"E, 10\u00b037'10\"N",
+      "name1": "Meenkara Dam\r\n",
+      "Photo": "D:\\ExamData2024\\WebGIS\\Photo\\Meenkara.jpg",
+      "lon": 76.79722222222178,
+      "lat": 10.619444444444433
+    },
+    {
+      "Name": "76\u00b035'0\"E, 10\u00b028'45\"N",
+      "name1": "Pothundi Dam",
+      "Photo": "D:\\ExamData2024\\WebGIS\\Photo\\pothundi-dam-photo-from.jpg",
+      "lon": 76.58333333333316,
+      "lat": 10.47916666666666
+    },
+    {
+      "Name": "76\u00b032'18\"E, 10\u00b059'7\"N",
+      "name1": "Velliyankallu Dam\r\n",
+      "Photo": null,
+      "lon": 76.5383333333332,
+      "lat": 10.985277777777773
+    },
+    {
+      "Name": "76\u00b041'1\"E, 10\u00b049'50\"N",
+      "name1": "Chulliyar dam",
+      "Photo": null,
+      "lon": 76.68361111111086,
+      "lat": 10.830555555555549
+    },
+    {
+      "Name": null,
+      "name1": "Mangalam Reservoir",
+      "Photo": null,
+      "lon": 76.53485591872575,
+      "lat": 10.51578568373716
+    },
+    {
+      "Name": null,
+      "name1": "Parambikulam Reservoir",
+      "Photo": null,
+      "lon": 76.77332942409338,
+      "lat": 10.387606764230245
+    },
+    {
+      "Name": null,
+      "name1": "Thunacadavu Reservoir",
+      "Photo": null,
+      "lon": 76.76787784982966,
+      "lat": 10.445902463848576
+    },
+    {
+      "Name": null,
+      "name1": "Walayar Reservoir",
+      "Photo": null,
+      "lon": 76.85363769531199,
+      "lat": 10.835424423217757
+    },
+    {
+      "Name": null,
+      "name1": "Nellimed Reservoir",
+      "Photo": null,
+      "lon": 76.82906239639279,
+      "lat": 10.660923924808179
+    },
+    {
+      "Name": null,
+      "name1": "Servuvani Reservoir",
+      "Photo": null,
+      "lon": 76.64511097824985,
+      "lat": 10.974093489730576
+    }
+  ],
+  "streams": {
+    "total_stream_length_km": 5408.11,
+    "drainage_density_km_per_sqkm": 1.69,
+    "orders": {
+      "2": {
+        "count": 1550,
+        "length_km": 840.6775354249069
+      },
+      "0": {
+        "count": 1104,
+        "length_km": 1418.23278520463
+      },
+      "1": {
+        "count": 3497,
+        "length_km": 2509.995719126695
+      },
+      "4": {
+        "count": 302,
+        "length_km": 170.14657270815462
+      },
+      "3": {
+        "count": 804,
+        "length_km": 460.6872703135296
+      },
+      "5": {
+        "count": 23,
+        "length_km": 8.368244104490318
+      }
+    }
+  },
+  "geology": {
+    "total_area_sqkm": 3204.36,
+    "groups": {
+      "Metamorphic Rocks": {
+        "count": 140,
+        "area_sqkm": 3071.197810989964
+      },
+      "Plutonic Rocks": {
+        "count": 41,
+        "area_sqkm": 10.95075365467156
+      },
+      "Metamorphic rocks": {
+        "count": 7,
+        "area_sqkm": 96.34282004428839
+      },
+      "Unconsolidated Sediments": {
+        "count": 1,
+        "area_sqkm": 20.63527057319593
+      },
+      "Semiconsolidated Sediment": {
+        "count": 1,
+        "area_sqkm": 0.21291597055213154
+      },
+      "Tank/WB/River": {
+        "count": 2,
+        "area_sqkm": 5.019138078056011
+      }
+    },
+    "formations": {
+      "Penisular Gneissic Complex": {
+        "group": "Metamorphic Rocks",
+        "count": 5,
+        "area_sqkm": 195.1896494229695
+      },
+      "Charnockite group of rocks": {
+        "group": "Metamorphic Rocks",
+        "count": 106,
+        "area_sqkm": 1123.8795346298614
+      },
+      "Basic Rocks": {
+        "group": "Plutonic Rocks",
+        "count": 31,
+        "area_sqkm": 8.124327338712572
+      },
+      "High grade metasedimentary rocks": {
+        "group": "Metamorphic Rocks",
+        "count": 1,
+        "area_sqkm": 8.344269136316722
+      },
+      "Migmatite Complex": {
+        "group": "Metamorphic Rocks",
+        "count": 23,
+        "area_sqkm": 1811.5963496941267
+      },
+      "Charnockite Group of rocks": {
+        "group": "Metamorphic rocks",
+        "count": 3,
+        "area_sqkm": 1.9081204770538087
+      },
+      "Sand and Silt": {
+        "group": "Unconsolidated Sediments",
+        "count": 1,
+        "area_sqkm": 20.63527057319593
+      },
+      "Khondalite Group of rocks": {
+        "group": "Metamorphic Rocks",
+        "count": 9,
+        "area_sqkm": 26.622707673924797
+      },
+      "Pegmatite/Aplite/Quartz vein": {
+        "group": "Plutonic Rocks",
+        "count": 10,
+        "area_sqkm": 2.82642631595899
+      },
+      "Sandstone and clay with lignite interc": {
+        "group": "Semiconsolidated Sediment",
+        "count": 1,
+        "area_sqkm": 0.21291597055213154
+      },
+      "Tank/WB/River": {
+        "group": "Tank/WB/River",
+        "count": 2,
+        "area_sqkm": 5.019138078056011
+      }
+    }
+  },
+  "waterbodies": {
+    "count": 13,
+    "total_water_area_sqkm": 101.3,
+    "total_water_area_ha": 10129.8,
+    "items": [
+      {
+        "OBJECTID": 1,
+        "area_sqkm": 0.052,
+        "area_ha": 5.2
+      },
+      {
+        "OBJECTID": 2,
+        "area_sqkm": 0.07,
+        "area_ha": 7.0
+      },
+      {
+        "OBJECTID": 3,
+        "area_sqkm": 0.016,
+        "area_ha": 1.6
+      },
+      {
+        "OBJECTID": 4,
+        "area_sqkm": 0.015,
+        "area_ha": 1.5
+      },
+      {
+        "OBJECTID": 5,
+        "area_sqkm": 0.043,
+        "area_ha": 4.3
+      },
+      {
+        "OBJECTID": 6,
+        "area_sqkm": 3.029,
+        "area_ha": 302.9
+      },
+      {
+        "OBJECTID": 7,
+        "area_sqkm": 1.185,
+        "area_ha": 118.5
+      },
+      {
+        "OBJECTID": 8,
+        "area_sqkm": 19.192,
+        "area_ha": 1919.2
+      },
+      {
+        "OBJECTID": 9,
+        "area_sqkm": 70.188,
+        "area_ha": 7018.8
+      },
+      {
+        "OBJECTID": 10,
+        "area_sqkm": 6.128,
+        "area_ha": 612.8
+      },
+      {
+        "OBJECTID": 11,
+        "area_sqkm": 0.001,
+        "area_ha": 0.1
+      },
+      {
+        "OBJECTID": 12,
+        "area_sqkm": 0.169,
+        "area_ha": 16.9
+      },
+      {
+        "OBJECTID": 13,
+        "area_sqkm": 1.209,
+        "area_ha": 120.9
+      }
+    ]
+  },
+  "roads": {
+    "total_road_km": 2923.24,
+    "density_km_per_sqkm": 0.91,
+    "classes": {
+      "FOOT PATH": {
+        "count": 41,
+        "length_km": 81.398
+      },
+      "PACK TRACK IN PLAINS": {
+        "count": 120,
+        "length_km": 170.64800000000005
+      },
+      "DISTRICT ROAD": {
+        "count": 1477,
+        "length_km": 1077.689
+      },
+      "CART TRACK IN PLAINS": {
+        "count": 373,
+        "length_km": 499.6009999999997
+      },
+      "VILLAGE ROAD": {
+        "count": 519,
+        "length_km": 677.6519999999995
+      },
+      "NATIONAL HIGHWAY": {
+        "count": 145,
+        "length_km": 124.523
+      },
+      "BOUNDARY": {
+        "count": 39,
+        "length_km": 105.34800000000003
+      },
+      "STATE HIGHWAY": {
+        "count": 222,
+        "length_km": 186.37699999999998
+      }
+    }
+  }
+}

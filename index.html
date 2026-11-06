@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BHARATHAPUZHA RIVER BASIN – GEOSPATIAL INFORMATION AND ENVIRONMENTAL MANAGEMENT PORTAL</title>
+  
+  <!-- Meta tags for Academic GIS Portfolio -->
+  <meta name="description" content="A comprehensive WebGIS and environmental management portal for the Bharathapuzha River Basin, Kerala, India. Developed by Haina L. Heron, MSc Geography & Disaster Management, Sree Sankaracharya University of Sanskrit, Kalady.">
+  <meta name="author" content="HAINA L. HERON">
+  <meta name="keywords" content="Bharathapuzha, Nila, WebGIS, Leaflet, GIS, Remote Sensing, Hydrology, Disaster Management, Kalady, Geography, Kerala">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="brand-wrapper">
+        <div class="brand-icon">
+          <i class="fa-solid fa-water"></i>
+        </div>
+        <div>
+          <div class="brand-title">BHARATHAPUZHA WEBGIS</div>
+          <div class="brand-subtitle">Environmental Management Portal</div>
+        </div>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#overview" class="nav-link">About Basin</a></li>
+        <li><a href="#webgis" class="nav-link nav-cta"><i class="fa-solid fa-map-location-dot"></i> Interactive Map</a></li>
+        <li><a href="#database" class="nav-link">Spatial Database</a></li>
+        <li><a href="#gallery" class="nav-link">Map Gallery</a></li>
+        <li><a href="#analytics" class="nav-link">Analytics</a></li>
+        <li><a href="#disaster" class="nav-link">Disaster Risk</a></li>
+        <li><a href="#references" class="nav-link">References</a></li>
+        <li><a href="#developer" class="nav-link">Developer</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       HERO / BANNER SECTION
+       ========================================================================== -->
+  <header class="hero-section" id="home">
+    <div class="hero-overlay-grid"></div>
+    <div class="container hero-content">
+      <div class="academic-badge">
+        <i class="fa-solid fa-graduation-cap"></i> MSc Geography & Disaster Management | Mid-Term GIS Practical Portal
+      </div>
+      <h1 class="hero-title">
+        BHARATHAPUZHA RIVER BASIN<br>
+        <span>GEOSPATIAL INFORMATION & ENVIRONMENTAL MANAGEMENT PORTAL</span>
+      </h1>
+      <p class="hero-lead">
+        A state-of-the-art interactive WebGIS system and environmental decision-support portal for the Bharathapuzha (Nila) River Basin in Kerala, India. Integrating QGIS-clipped spatial datasets, Strahler stream order hierarchies, geological lithology, hydraulic infrastructure, dam storage dynamics, and disaster vulnerability.
+      </p>
+      <div class="hero-actions">
+        <a href="#webgis" class="btn btn-primary">
+          <i class="fa-solid fa-layer-group"></i> Launch Interactive WebGIS
+        </a>
+        <a href="#gallery" class="btn btn-secondary">
+          <i class="fa-solid fa-images"></i> Explore Map Gallery
+        </a>
+        <a href="#analytics" class="btn btn-secondary">
+          <i class="fa-solid fa-chart-line"></i> View Environmental Analytics
+        </a>
+      </div>
+
+      <!-- Live Calculated Spatial Metrics -->
+      <div class="metrics-strip">
+        <div class="metric-card">
+          <div class="metric-num">3,204.66</div>
+          <div class="metric-label">Basin Area (km²)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">5,408.11</div>
+          <div class="metric-label">Stream Network (km)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">1.69</div>
+          <div class="metric-label">Drainage Density (km/km²)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">13</div>
+          <div class="metric-label">Check Dams & Reservoirs</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">2,923.24</div>
+          <div class="metric-label">Road Infrastructure (km)</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       SECTION 2: ABOUT THE BASIN & PHYSICAL GEOGRAPHY
+       ========================================================================== -->
+  <section id="overview" class="overview-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Physiographic Profile & Hydrological Character</span>
+        <h2 class="section-title">The Lifeline of Central Kerala: Bharathapuzha (Nila)</h2>
+        <p class="section-desc">
+          Geomorphological, climatic, hydrological, and environmental characteristics of the second longest river basin in Kerala, spanning the Palakkad Gap.
+        </p>
+      </div>
+
+      <div class="overview-grid">
+        <!-- Card 1: Geographic Extent -->
+        <div class="info-card">
+          <div class="card-icon-bubble">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <h3 class="card-title">Location & Geographic Extent</h3>
+          <p class="card-body">
+            The Bharathapuzha River Basin spans between Latitudes 10°16' N to 11°28' N and Longitudes 75°35' E to 77°06' E in the central sector of Kerala. The river originates from the Anamalai Hills and flows westward across the Palakkad Gap into the Arabian Sea at Ponnani.
+          </p>
+          <ul class="spec-list">
+            <li><span class="spec-key">Drainage Area</span><span class="spec-val">3,204.66 km²</span></li>
+            <li><span class="spec-key">Perimeter</span><span class="spec-val">446.36 km</span></li>
+            <li><span class="spec-key">Watershed Code</span><span class="spec-val">20B4w (NRIS: 20-02-04-23)</span></li>
+            <li><span class="spec-key">Outfall</span><span class="spec-val">Arabian Sea, Ponnani Estuary</span></li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Tributary Network -->
+        <div class="info-card">
+          <div class="card-icon-bubble">
+            <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <h3 class="card-title">Major Tributary Systems</h3>
+          <p class="card-body">
+            The basin comprises four major tributary sub-basins that drain diverse terrains before converging to form the expansive mainstem:
+          </p>
+          <ul class="spec-list">
+            <li><span class="spec-key">Kalpathipuzha</span><span class="spec-val">Drains Malampuzha & Walayar hills</span></li>
+            <li><span class="spec-key">Gayathripuzha</span><span class="spec-val">Drains Mangalam, Pothundi & Meenkara</span></li>
+            <li><span class="spec-key">Thoothapuzha</span><span class="spec-val">Silent Valley (Kunthipuzha) & Kanjirapuzha</span></li>
+            <li><span class="spec-key">Kannadipuzha</span><span class="spec-val">Chitturpuzha from Anamalai range</span></li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Physiography & Relief -->
+        <div class="info-card">
+          <div class="card-icon-bubble">
+            <i class="fa-solid fa-mountain"></i>
+          </div>
+          <h3 class="card-title">Physiographic Zones</h3>
+          <p class="card-body">
+            The basin exhibits pronounced morphological zonations from east to west, encompassing rugged mountains, rolling piedmont plains, and low estuarine flatlands:
+          </p>
+          <ul class="spec-list">
+            <li><span class="spec-key">Highland Catchment</span><span class="spec-val">> 600 m (Western Ghats / Anamalai)</span></li>
+            <li><span class="spec-key">Midland / Palakkad Gap</span><span class="spec-val">50 – 150 m (Piedmont undulating plain)</span></li>
+            <li><span class="spec-key">Lowland & Estuary</span><span class="spec-val">< 20 m (Coastal floodplain at Ponnani)</span></li>
+            <li><span class="spec-key">Relief Type</span><span class="spec-val">Tectonically controlled gap pass</span></li>
+          </ul>
+        </div>
+
+        <!-- Card 4: Drainage Characteristics -->
+        <div class="info-card">
+          <div class="card-icon-bubble">
+            <i class="fa-solid fa-sitemap"></i>
+          </div>
+          <h3 class="card-title">Drainage Characteristics</h3>
+          <p class="card-body">
+            Exhibiting dendritic to sub-parallel drainage networks, the clipped basin features 7,280 delineated stream channels totaling 5,408.11 km in length with Strahler stream orders reaching up to Order 5.
+          </p>
+          <ul class="spec-list">
+            <li><span class="spec-key">Total Stream Length</span><span class="spec-val">5,408.11 km</span></li>
+            <li><span class="spec-key">Drainage Density</span><span class="spec-val">1.69 km/km² (Moderate)</span></li>
+            <li><span class="spec-key">Stream Segments</span><span class="spec-val">7,280 reaches</span></li>
+            <li><span class="spec-key">Pattern</span><span class="spec-val">Dendritic / Trellis near Faults</span></li>
+          </ul>
+        </div>
+
+        <!-- Card 5: Climate & Rainfall -->
+        <div class="info-card">
+          <div class="card-icon-bubble">
+            <i class="fa-solid fa-cloud-showers-heavy"></i>
+          </div>
+          <h3 class="card-title">Climate & Rainfall Regime</h3>
+          <p class="card-body">
+            Characterized by a tropical monsoon climate with steep precipitation gradients across the basin. The upper Silent Valley and Nelliyampathy slopes receive over 3,500 mm annually, while the Palakkad Gap plains experience rain-shadow effects receiving 1,600 to 1,900 mm.
+          </p>
+          <ul class="spec-list">
+            <li><span class="spec-key">South-West Monsoon</span><span class="spec-val">June – August (65% precipitation)</span></li>
+            <li><span class="spec-key">North-East Monsoon</span><span class="spec-val">October – November (20% precipitation)</span></li>
+            <li><span class="spec-key">Mean Temperature</span><span class="spec-val">24°C to 38°C (Peak summer in Palakkad)</span></li>
+          </ul>
+        </div>
+
+        <!-- Card 6: Environmental Challenges -->
+        <div class="info-card">
+          <div class="card-icon-bubble" style="background: rgba(239, 68, 68, 0.1); color: var(--accent-red);">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <h3 class="card-title">Major Environmental Challenges</h3>
+          <p class="card-body">
+            Bharathapuzha suffers from acute anthropogenic degradation and climate vulnerability, severely jeopardizing regional water security:
+          </p>
+          <ul class="spec-list">
+            <li><span class="spec-key">Sand Mining Impact</span><span class="spec-val">Channel deepening & water table drop</span></li>
+            <li><span class="spec-key">Summer Desiccation</span><span class="spec-val">River dries into exposed sandy beds</span></li>
+            <li><span class="spec-key">Saline Intrusion</span><span class="spec-val">Tidal backflow at Chamravattom</span></li>
+            <li><span class="spec-key">Reservoir Siltation</span><span class="spec-val">Reduced capacity in Malampuzha/Mangalam</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: INTERACTIVE WEBGIS WORKSTATION
+       ========================================================================== -->
+  <section id="webgis" class="webgis-section">
+    <div class="webgis-container">
+      <div class="section-header" style="color: white; margin-bottom: 2rem;">
+        <span class="section-tag" style="color: var(--accent-cyan);">Geospatial Analysis Workstation</span>
+        <h2 class="section-title" style="color: white;">Interactive Bharathapuzha WebGIS Map</h2>
+        <p class="section-desc" style="color: #94a3b8;">
+          Multi-layer interactive geospatial viewer with layer visibility toggles, Strahler stream order classification, geological choropleths, dam photo inspection, distance/area measurement, and live coordinates.
+        </p>
+      </div>
+
+      <div class="map-wrapper">
+        <!-- Top Toolbar -->
+        <div class="map-top-bar">
+          <div class="map-search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="mapSearchInput" placeholder="Search dams, reservoirs, geology...">
+            <div class="search-results" id="searchResults"></div>
+          </div>
+
+          <div class="map-tool-buttons">
+            <button class="tool-btn" id="btnFitBounds" title="Zoom to Basin Boundary">
+              <i class="fa-solid fa-expand"></i> Extent
+            </button>
+            <button class="tool-btn" id="btnMeasureDist" title="Measure Linear Distance">
+              <i class="fa-solid fa-ruler"></i> Distance
+            </button>
+            <button class="tool-btn" id="btnMeasureArea" title="Measure Polygon Area">
+              <i class="fa-solid fa-draw-polygon"></i> Area
+            </button>
+            <button class="tool-btn" id="btnClearMeasure" title="Clear Measurements">
+              <i class="fa-solid fa-trash-can"></i> Clear
+            </button>
+            <button class="tool-btn" id="btnFullscreen" title="Toggle Fullscreen">
+              <i class="fa-solid fa-maximize"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Sidebar Toggle -->
+        <button class="sidebar-toggle-btn" id="btnToggleSidebar" title="Toggle Layer Drawer">
+          <i class="fa-solid fa-layer-group"></i>
+        </button>
+
+        <!-- Layer Control Side Drawer -->
+        <aside class="gis-sidebar" id="gisSidebar">
+          <div class="sidebar-title">
+            <i class="fa-solid fa-sliders"></i> Map Layer Controls
+          </div>
+
+          <!-- Basemap selection -->
+          <div class="layer-group">
+            <div class="group-title">Base Map Style</div>
+            <select id="basemapSelect" class="table-search" style="width: 100%; background: #1e293b; color: white; border-color: rgba(255,255,255,0.2);">
+              <option value="osm">OpenStreetMap Standard</option>
+              <option value="satellite">Esri World Imagery (Satellite)</option>
+              <option value="topo">Esri World Topographic</option>
+              <option value="carto">CartoDB Positron (Clean Light)</option>
+            </select>
+          </div>
+
+          <!-- Thematic Layers -->
+          <div class="layer-group">
+            <div class="group-title">Watershed & Hydrology</div>
+            <div class="layer-item">
+              <label class="layer-label">
+                <input type="checkbox" id="layerBasin" checked>
+                <span class="layer-color-indicator" style="background:#0284c7; border: 1px solid #0f172a;"></span>
+                Basin Boundary (20B4w)
+              </label>
+            </div>
+            <div class="layer-item">
+              <label class="layer-label">
+                <input type="checkbox" id="layerStreams" checked>
+                <span class="layer-color-indicator" style="background:#023e8a;"></span>
+                Drainage Network (Orders 1-5)
+              </label>
+            </div>
+            <div class="layer-item">
+              <label class="layer-label">
+                <input type="checkbox" id="layerWaterbodies" checked>
+                <span class="layer-color-indicator" style="background:#0284c7;"></span>
+                Reservoir Waterbodies
+              </label>
+            </div>
+          </div>
+
+          <div class="layer-group">
+            <div class="group-title">Hydraulic & Built Structures</div>
+            <div class="layer-item">
+              <label class="layer-label">
+                <input type="checkbox" id="layerDams" checked>
+                <span class="layer-color-indicator" style="background:#ef4444; border-radius:50%;"></span>
+                Check Dams & Regulators (13)
+              </label>
+            </div>
+            <div class="layer-item">
+              <label class="layer-label">
+                <input type="checkbox" id="layerRoads">
+                <span class="layer-color-indicator" style="background:#f97316;"></span>
+                Road Network (NH, SH, MDR)
+              </label>
+            </div>
+          </div>
+
+          <div class="layer-group">
+            <div class="group-title">Lithology & Bedrock</div>
+            <div class="layer-item">
+              <label class="layer-label">
+                <input type="checkbox" id="layerGeology">
+                <span class="layer-color-indicator" style="background:#d4b483;"></span>
+                Geological Formations (192 units)
+              </label>
+            </div>
+            <div class="opacity-slider-box">
+              <label for="opacitySlider">
+                <span>Geology Fill Opacity</span>
+                <span id="opacityVal">75%</span>
+              </label>
+              <input type="range" id="opacitySlider" min="0" max="1" step="0.05" value="0.75">
+            </div>
+          </div>
+
+          <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div style="font-size: 0.78rem; color: #94a3b8; line-height: 1.5;">
+              <i class="fa-solid fa-circle-info" style="color: var(--accent-cyan);"></i> Click any dam, stream, or polygon to inspect full QGIS attributes and high-resolution photographs.
+            </div>
+          </div>
+        </aside>
+
+        <!-- North Arrow Control -->
+        <div class="north-arrow-control">
+          <i class="fa-solid fa-compass compass-dial"></i>
+        </div>
+
+        <!-- Dynamic Map Legend -->
+        <div class="map-legend-panel" id="mapLegend"></div>
+
+        <!-- The Leaflet Map Canvas -->
+        <div id="map"></div>
+
+        <!-- Bottom Status & Coordinate Bar -->
+        <div class="map-bottom-bar">
+          <div id="coordDisplay">
+            <i class="fa-solid fa-crosshairs"></i> Move cursor across map to display geographic coordinates and UTM Zone 43N metrics
+          </div>
+          <div style="color: #64748b;">
+            EPSG:4326 / UTM 43N | Datum: WGS 84
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: SPATIAL DATABASE & ATTRIBUTE EXPLORER
+       ========================================================================== -->
+  <section id="database" class="database-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Vector Attributes & Quantitative Catalog</span>
+        <h2 class="section-title">Spatial Database & Layer Attributes</h2>
+        <p class="section-desc">
+          Structured attribute tables extracted directly from QGIS shapefiles. Filter, search, and download spatial datasets in open GeoJSON and tabular formats.
+        </p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="tab-nav">
+        <button class="tab-btn active" data-tab="tabDams"><i class="fa-solid fa-water"></i> Check Dams & Regulators (13)</button>
+        <button class="tab-btn" data-tab="tabGeology"><i class="fa-solid fa-cubes"></i> Geological Formations (11)</button>
+        <button class="tab-btn" data-tab="tabStreams"><i class="fa-solid fa-sitemap"></i> Strahler Stream Hierarchy</button>
+      </div>
+
+      <!-- Search & Download Row -->
+      <div class="table-controls">
+        <input type="text" id="tableSearchInput" class="table-search" placeholder="Filter attribute rows...">
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-secondary btn-download-geojson" data-file="checkdams.geojson" style="color: var(--text-main); border-color: var(--border-light);">
+            <i class="fa-solid fa-download"></i> CheckDams GeoJSON
+          </button>
+          <button class="btn btn-secondary btn-download-geojson" data-file="geology.geojson" style="color: var(--text-main); border-color: var(--border-light);">
+            <i class="fa-solid fa-download"></i> Geology GeoJSON
+          </button>
+          <button class="btn btn-secondary btn-download-geojson" data-file="streams.geojson" style="color: var(--text-main); border-color: var(--border-light);">
+            <i class="fa-solid fa-download"></i> Streams GeoJSON
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab 1: Check Dams Table -->
+      <div class="tab-pane" id="tabDams">
+        <div class="table-responsive">
+          <table class="gis-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Dam / Reservoir Name</th>
+                <th>Tributary Stream</th>
+                <th>Structural Type</th>
+                <th>Gross Capacity</th>
+                <th>Commissioned</th>
+                <th>Geographic Coordinates</th>
+                <th>Site Photograph</th>
+              </tr>
+            </thead>
+            <tbody id="damsTableBody">
+              <!-- Populated by script.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tab 2: Geology Table -->
+      <div class="tab-pane" id="tabGeology" style="display: none;">
+        <div class="table-responsive">
+          <table class="gis-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Geological Formation (NAME)</th>
+                <th>Lithological Rock Group</th>
+                <th>Polygon Count</th>
+                <th>Mapped Area (km²)</th>
+                <th>Basin Coverage (%)</th>
+              </tr>
+            </thead>
+            <tbody id="geologyTableBody">
+              <!-- Populated by script.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tab 3: Streams Table -->
+      <div class="tab-pane" id="tabStreams" style="display: none;">
+        <div class="table-responsive">
+          <table class="gis-table">
+            <thead>
+              <tr>
+                <th>Strahler Stream Order</th>
+                <th>Number of Stream Segments</th>
+                <th>Total Stream Length (km)</th>
+                <th>Length Share (%)</th>
+                <th>Mean Segment Length (km)</th>
+              </tr>
+            </thead>
+            <tbody id="streamsTableBody">
+              <!-- Populated by script.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5: THEMATIC CARTOGRAPHIC MAP GALLERY
+       ========================================================================== -->
+  <section id="gallery" class="gallery-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Cartographic Layouts & QGIS Outputs</span>
+        <h2 class="section-title">Thematic Map Gallery</h2>
+        <p class="section-desc">
+          Official cartographic layout maps generated from QGIS 3.44.12, including the exam practical drainage density layout, lithological classifications, stream order hierarchies, and hydraulic infrastructure.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Map 1: Drainage Density Layout (From PDF Exam Output) -->
+        <div class="gallery-card">
+          <div class="gallery-thumb-wrap">
+            <img src="assets/images/maps/bharathapuzha_drainage_density.png" alt="Bharathapuzha Drainage Density Layout Map" class="gallery-thumb">
+            <div class="gallery-overlay-btn">
+              <a href="#" class="overlay-icon-btn open-lightbox" data-img="assets/images/maps/bharathapuzha_drainage_density.png" data-caption="Bharathapuzha River Basin - Drainage Density Map (QGIS Layout)">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </a>
+              <a href="assets/images/maps/bharathapuzha_drainage_density.png" download class="overlay-icon-btn">
+                <i class="fa-solid fa-download"></i>
+              </a>
+            </div>
+          </div>
+          <div class="gallery-info">
+            <span class="gallery-badge"><i class="fa-solid fa-award"></i> QGIS Practical Exam Layout</span>
+            <h3 class="gallery-title">Drainage Density Layout Map</h3>
+            <p class="gallery-desc">
+              Cartographic layout exported from QGIS 3.44.12 for PGEM-11503 Mid-Term Practical Exam Question 6. Illustrates the spatial distribution of stream density across Bharathapuzha Basin with full legend and neatline.
+            </p>
+            <div class="gallery-actions">
+              <a href="#" class="btn btn-primary open-lightbox" data-img="assets/images/maps/bharathapuzha_drainage_density.png" data-caption="Bharathapuzha River Basin - Drainage Density Map (QGIS Layout)" style="padding: 8px 16px; font-size: 0.82rem;">
+                <i class="fa-solid fa-eye"></i> Full Screen
+              </a>
+              <a href="assets/images/maps/bharathapuzha_drainage_density.png" download class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.82rem; color: var(--text-main); border-color: var(--border-light);">
+                <i class="fa-solid fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map 2: Geological Formations Map -->
+        <div class="gallery-card">
+          <div class="gallery-thumb-wrap">
+            <img src="assets/images/maps/geology_map.png" alt="Geological Formations Map" class="gallery-thumb">
+            <div class="gallery-overlay-btn">
+              <a href="#" class="overlay-icon-btn open-lightbox" data-img="assets/images/maps/geology_map.png" data-caption="Bharathapuzha River Basin - Geological Formations Map (GSI Data)">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </a>
+              <a href="assets/images/maps/geology_map.png" download class="overlay-icon-btn">
+                <i class="fa-solid fa-download"></i>
+              </a>
+            </div>
+          </div>
+          <div class="gallery-info">
+            <span class="gallery-badge">Lithological Analysis</span>
+            <h3 class="gallery-title">Geological Formations Map</h3>
+            <p class="gallery-desc">
+              Cartographic visualization of the 192 clipped geological units categorized into Charnockite group, Migmatite Complex, Peninsular Gneissic Complex, Basic Dykes, and Quaternary alluvium.
+            </p>
+            <div class="gallery-actions">
+              <a href="#" class="btn btn-primary open-lightbox" data-img="assets/images/maps/geology_map.png" data-caption="Bharathapuzha River Basin - Geological Formations Map (GSI Data)" style="padding: 8px 16px; font-size: 0.82rem;">
+                <i class="fa-solid fa-eye"></i> Full Screen
+              </a>
+              <a href="assets/images/maps/geology_map.png" download class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.82rem; color: var(--text-main); border-color: var(--border-light);">
+                <i class="fa-solid fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map 3: Strahler Stream Hierarchy Map -->
+        <div class="gallery-card">
+          <div class="gallery-thumb-wrap">
+            <img src="assets/images/maps/stream_hierarchy_map.png" alt="Strahler Stream Hierarchy Map" class="gallery-thumb">
+            <div class="gallery-overlay-btn">
+              <a href="#" class="overlay-icon-btn open-lightbox" data-img="assets/images/maps/stream_hierarchy_map.png" data-caption="Bharathapuzha River Basin - Strahler Stream Hierarchy Map">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </a>
+              <a href="assets/images/maps/stream_hierarchy_map.png" download class="overlay-icon-btn">
+                <i class="fa-solid fa-download"></i>
+              </a>
+            </div>
+          </div>
+          <div class="gallery-info">
+            <span class="gallery-badge">Hydrological Modeling</span>
+            <h3 class="gallery-title">Strahler Stream Hierarchy Map</h3>
+            <p class="gallery-desc">
+              Morphometric drainage network map showcasing 7,280 stream segments categorized from 1st-order headwaters to 5th-order mainstem arteries and major reservoir water bodies.
+            </p>
+            <div class="gallery-actions">
+              <a href="#" class="btn btn-primary open-lightbox" data-img="assets/images/maps/stream_hierarchy_map.png" data-caption="Bharathapuzha River Basin - Strahler Stream Hierarchy Map" style="padding: 8px 16px; font-size: 0.82rem;">
+                <i class="fa-solid fa-eye"></i> Full Screen
+              </a>
+              <a href="assets/images/maps/stream_hierarchy_map.png" download class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.82rem; color: var(--text-main); border-color: var(--border-light);">
+                <i class="fa-solid fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map 4: Dams & Water Resources Map -->
+        <div class="gallery-card">
+          <div class="gallery-thumb-wrap">
+            <img src="assets/images/maps/dams_water_resources_map.png" alt="Dams and Water Resources Map" class="gallery-thumb">
+            <div class="gallery-overlay-btn">
+              <a href="#" class="overlay-icon-btn open-lightbox" data-img="assets/images/maps/dams_water_resources_map.png" data-caption="Bharathapuzha River Basin - Dams, Regulators & Water Storage Map">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </a>
+              <a href="assets/images/maps/dams_water_resources_map.png" download class="overlay-icon-btn">
+                <i class="fa-solid fa-download"></i>
+              </a>
+            </div>
+          </div>
+          <div class="gallery-info">
+            <span class="gallery-badge">Hydraulic Infrastructure</span>
+            <h3 class="gallery-title">Dams, Regulators & Water Storage</h3>
+            <p class="gallery-desc">
+              Spatial inventory map locating all 13 major storage dams, check dams, and irrigation regulators, including Malampuzha, Mangalam, Pothundi, Meenkara, Walayar, and Velliyankallu.
+            </p>
+            <div class="gallery-actions">
+              <a href="#" class="btn btn-primary open-lightbox" data-img="assets/images/maps/dams_water_resources_map.png" data-caption="Bharathapuzha River Basin - Dams, Regulators & Water Storage Map" style="padding: 8px 16px; font-size: 0.82rem;">
+                <i class="fa-solid fa-eye"></i> Full Screen
+              </a>
+              <a href="assets/images/maps/dams_water_resources_map.png" download class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.82rem; color: var(--text-main); border-color: var(--border-light);">
+                <i class="fa-solid fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map 5: Transportation Network Map -->
+        <div class="gallery-card">
+          <div class="gallery-thumb-wrap">
+            <img src="assets/images/maps/road_network_map.png" alt="Road Transportation Network Map" class="gallery-thumb">
+            <div class="gallery-overlay-btn">
+              <a href="#" class="overlay-icon-btn open-lightbox" data-img="assets/images/maps/road_network_map.png" data-caption="Bharathapuzha River Basin - Transportation & Road Network Map">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </a>
+              <a href="assets/images/maps/road_network_map.png" download class="overlay-icon-btn">
+                <i class="fa-solid fa-download"></i>
+              </a>
+            </div>
+          </div>
+          <div class="gallery-info">
+            <span class="gallery-badge">Infrastructure & Settlement</span>
+            <h3 class="gallery-title">Transportation & Road Corridors</h3>
+            <p class="gallery-desc">
+              Cartographic rendering of 2,923.24 km of roadway infrastructure across Palakkad Gap, highlighting National Highway 544, State Highways, and rural feeder connectivity.
+            </p>
+            <div class="gallery-actions">
+              <a href="#" class="btn btn-primary open-lightbox" data-img="assets/images/maps/road_network_map.png" data-caption="Bharathapuzha River Basin - Transportation & Road Network Map" style="padding: 8px 16px; font-size: 0.82rem;">
+                <i class="fa-solid fa-eye"></i> Full Screen
+              </a>
+              <a href="assets/images/maps/road_network_map.png" download class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.82rem; color: var(--text-main); border-color: var(--border-light);">
+                <i class="fa-solid fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 6: ENVIRONMENTAL ANALYSIS DASHBOARD (CHART.JS)
+       ========================================================================== -->
+  <section id="analytics" class="analytics-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Empirical Data & Quantitative Analytics</span>
+        <h2 class="section-title">Environmental Analysis Dashboard</h2>
+        <p class="section-desc">
+          Morphometric analysis, hydrological distributions, and geological area breakdowns computed directly from actual QGIS shapefile geometry and attribute tables.
+        </p>
+      </div>
+
+      <!-- Statistical Cards Row -->
+      <div class="analytics-cards-row">
+        <div class="stat-metric-box">
+          <div class="stat-val">1.69 km/km²</div>
+          <div class="stat-title">Drainage Density (Dd)</div>
+          <div class="stat-desc">5,408.11 km stream length across 3,204.66 km² basin area, indicating permeable bedrock and moderate runoff.</div>
+        </div>
+
+        <div class="stat-metric-box green">
+          <div class="stat-val">10,129.8 Ha</div>
+          <div class="stat-title">Total Reservoir Spread</div>
+          <div class="stat-desc">101.30 km² surface area across 13 major storage reservoirs, supplying irrigation to the Palakkad paddy plains.</div>
+        </div>
+
+        <div class="stat-metric-box amber">
+          <div class="stat-val">98.8%</div>
+          <div class="stat-title">Crystalline Shield Lithology</div>
+          <div class="stat-desc">3,167.54 km² underlain by hard metamorphic rocks (Migmatite & Charnockite), constraining deep groundwater storage.</div>
+        </div>
+
+        <div class="stat-metric-box cyan">
+          <div class="stat-val">0.91 km/km²</div>
+          <div class="stat-title">Road Network Density</div>
+          <div class="stat-desc">2,923.24 km of roads crossing the river basin, providing high accessibility for emergency evacuation corridors.</div>
+        </div>
+      </div>
+
+      <!-- Charts Grid -->
+      <div class="analytics-grid">
+        <!-- Chart 1 -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3 class="chart-title">Strahler Stream Order Distribution</h3>
+            <span class="chart-badge">Hydrology</span>
+          </div>
+          <div class="chart-box">
+            <canvas id="chartStreamOrders"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 2 -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3 class="chart-title">Geological Formations Area Share</h3>
+            <span class="chart-badge">Lithology</span>
+          </div>
+          <div class="chart-box">
+            <canvas id="chartGeology"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 3 -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3 class="chart-title">Major Dam Storage Capacity (MCM)</h3>
+            <span class="chart-badge">Water Resources</span>
+          </div>
+          <div class="chart-box">
+            <canvas id="chartReservoirs"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 4 -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3 class="chart-title">Road Infrastructure by Classification</h3>
+            <span class="chart-badge">Connectivity</span>
+          </div>
+          <div class="chart-box">
+            <canvas id="chartRoads"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 7: DISASTER MANAGEMENT & HAZARD MITIGATION
+       ========================================================================== -->
+  <section id="disaster" class="disaster-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Disaster Risk Reduction (DRR) & Vulnerability</span>
+        <h2 class="section-title">Disaster Management & Basin Resilience</h2>
+        <p class="section-desc">
+          Geospatial hazard assessment for riverine floods, dam spillway routing, riverbank erosion, flash floods, and drought dynamics in the Bharathapuzha basin.
+        </p>
+      </div>
+
+      <div class="disaster-grid">
+        <!-- Hazard 1: Riverine Inundation -->
+        <div class="hazard-card">
+          <div class="hazard-icon">
+            <i class="fa-solid fa-house-flood-water"></i>
+          </div>
+          <h3 class="hazard-title">Monsoonal Flood Inundation</h3>
+          <p class="hazard-desc">
+            Extreme rainfall during the South-West monsoon induces severe flood inundation across the lower-gradient plains of Shoranur, Pattambi, Thrithala, Kuttippuram, and the Ponnani estuarine delta. The historical 2018 and 2019 super-floods submerged low-lying paddy tracts and disrupted rail corridors through the Palakkad Gap.
+          </p>
+        </div>
+
+        <!-- Hazard 2: Dam Safety & Spillway Routing -->
+        <div class="hazard-card">
+          <div class="hazard-icon" style="background: rgba(2, 132, 199, 0.1); color: var(--brand-blue);">
+            <i class="fa-solid fa-dam"></i>
+          </div>
+          <h3 class="hazard-title">Dam Spillway & Reservoir Surcharge</h3>
+          <p class="hazard-desc">
+            The basin contains 13 key water storage structures. Sudden uncoordinated discharges from Malampuzha (226 MCM), Mangalam, and Kanjirapuzha dams during torrential downpours can escalate downstream flash-flooding. Strict enforcement of revised dynamic rule curves and flood cushions is imperative.
+          </p>
+        </div>
+
+        <!-- Hazard 3: Riverbank Erosion & Sand Mining -->
+        <div class="hazard-card">
+          <div class="hazard-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--accent-amber);">
+            <i class="fa-solid fa-volcano"></i>
+          </div>
+          <h3 class="hazard-title">Riverbank Collapse & Siltation</h3>
+          <p class="hazard-desc">
+            Pervasive illegal sand mining has caused severe bed degradation (downcutting of up to 4 to 5 meters in reaches like Thirunavaya and Chamravattom). The stripping of the river's sandy filter mantle has depleted riparian groundwater storage and triggered catastrophic bank slumping.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4-Phase DRR Framework -->
+      <div class="drr-framework-box">
+        <h3 style="font-size: 1.4rem; color: var(--primary-navy); margin-bottom: 0.5rem;">
+          <i class="fa-solid fa-shield-halved" style="color: var(--accent-teal);"></i> Integrated River Basin Disaster Risk Reduction (DRR) Matrix
+        </h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem;">
+          A holistic four-phase framework combining spatial decision support, structural interventions, and community preparedness:
+        </p>
+
+        <div class="drr-phases">
+          <div class="drr-phase-item">
+            <h4 class="drr-phase-title">1. Preparedness & Early Warning</h4>
+            <p class="drr-phase-desc">
+              Deployment of automated river telemetry stations along Kalpathipuzha, Gayathripuzha, and Thoothapuzha. Early flash flood alerts linked with Kerala State Disaster Management Authority (KSDMA) operations center.
+            </p>
+          </div>
+          <div class="drr-phase-item">
+            <h4 class="drr-phase-title">2. Mitigation & Catchment Protection</h4>
+            <p class="drr-phase-desc">
+              Catchment afforestation in Silent Valley and Nelliyampathy ridges. Systematic desiltation of check dams, bio-engineering revetments with bamboo along crumbling riverbanks, and complete moratorium on riverbed mining.
+            </p>
+          </div>
+          <div class="drr-phase-item">
+            <h4 class="drr-phase-title">3. Response & Evacuation Routing</h4>
+            <p class="drr-phase-desc">
+              Panchayat-level GIS mapping of designated flood relief shelters. Evacuation routing using the 2,923 km road network, prioritizing elevated National Highway 544 and State Highway corridors.
+            </p>
+          </div>
+          <div class="drr-phase-item">
+            <h4 class="drr-phase-title">4. Resilience & Sustainable Governance</h4>
+            <p class="drr-phase-desc">
+              Establishment of a statutory Bharathapuzha River Basin Authority (BRBA) practicing Integrated Water Resources Management (IWRM) to balance irrigation demand, ecological baseflows, and flood storage.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 8: REFERENCES & DATA SOURCES
+       ========================================================================== -->
+  <section id="references" class="references-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Academic Provenance & Citations</span>
+        <h2 class="section-title">References & Spatial Data Sources</h2>
+        <p class="section-desc">
+          Official sources, software suites, and academic foundations supporting the spatial datasets and analyses in this portal.
+        </p>
+      </div>
+
+      <ul class="ref-list">
+        <li class="ref-item">
+          <div class="ref-num">1</div>
+          <div class="ref-text">
+            <b>QGIS Geospatial Software Suite (Version 3.44.12-Solothurn):</b> Open-source geographic information system used for spatial clipping, Strahler stream order classification, network analysis, coordinate reprojection (UTM Zone 43N / WGS 84), and layout generation.
+          </div>
+        </li>
+        <li class="ref-item">
+          <div class="ref-num">2</div>
+          <div class="ref-text">
+            <b>Watershed Atlas of Kerala & Kerala State Land Use Board (KSLUB):</b> Spatial boundary delineation, drainage basin demarcation (`WSCODE: 20B4w`, `NRIS: 20-02-04-23`), and sub-watershed perimeter datasets.
+          </div>
+        </li>
+        <li class="ref-item">
+          <div class="ref-num">3</div>
+          <div class="ref-text">
+            <b>Geological Survey of India (GSI) & Department of Mining and Geology, Kerala:</b> 1:50,000 lithological mapping datasets characterizing Charnockite, Migmatite Complex, and Peninsular Gneissic rock units across the Palakkad Gap.
+          </div>
+        </li>
+        <li class="ref-item">
+          <div class="ref-num">4</div>
+          <div class="ref-text">
+            <b>Irrigation & Water Resources Department, Government of Kerala:</b> Hydraulic infrastructure records, reservoir capacity metrics, and barrage operational records for Malampuzha, Mangalam, Pothundi, Meenkara, Walayar, and Velliyankallu check dams.
+          </div>
+        </li>
+        <li class="ref-item">
+          <div class="ref-num">5</div>
+          <div class="ref-text">
+            <b>Survey of India (SOI) & OpenStreetMap Contributors:</b> Topographical elevation benchmarks, road network connectivity, and river channel vectorization.
+          </div>
+        </li>
+        <li class="ref-item">
+          <div class="ref-num">6</div>
+          <div class="ref-text">
+            <b>Sree Sankaracharya University of Sanskrit, Kalady:</b> Department of Geography & Disaster Management, Course PGEM-11503: Practical I — Geographic Information System, Mid-Term Examinations, September 2026.
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 9: ABOUT DEVELOPER & ACADEMIC CREDITS
+       ========================================================================== -->
+  <section id="developer" class="developer-section">
+    <div class="container">
+      <div class="developer-card">
+        <div class="dev-avatar-wrap">
+          <i class="fa-solid fa-user-graduate"></i>
+        </div>
+        <div>
+          <div class="dev-role">PORTAL DEVELOPER & CARTOGRAPHER</div>
+          <h2 class="dev-name">HAINA L. HERON</h2>
+          <div class="dev-institution">
+            <strong>Discipline:</strong> MSc Geography and Disaster Management<br>
+            <strong>Institution:</strong> Sree Sankaracharya University of Sanskrit, Kalady, Kerala, India.<br>
+            <strong>Project:</strong> Bharathapuzha River Basin WebGIS – Geospatial Information and Environmental Management Portal
+          </div>
+          <div class="dev-credentials-row">
+            <span class="dev-badge"><i class="fa-solid fa-envelope"></i> hainalheron@2005</span>
+            <span class="dev-badge"><i class="fa-solid fa-earth-asia"></i> Advanced WebGIS & Spatial Analysis</span>
+            <span class="dev-badge"><i class="fa-solid fa-shield-virus"></i> Watershed Disaster Risk Reduction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Bharathapuzha WebGIS</h4>
+          <p style="line-height: 1.6; margin-bottom: 1rem; color: #94a3b8;">
+            A dedicated geospatial information and environmental management platform for academic research, watershed monitoring, and disaster risk reduction in the Bharathapuzha River Basin, Kerala, India.
+          </p>
+          <div style="font-size: 0.8rem; color: #64748b;">
+            Built with HTML5, CSS3, JavaScript, Leaflet.js, GDAL, and QGIS.
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Portal Sections</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#overview">About Basin</a></li>
+            <li><a href="#webgis">Interactive Map</a></li>
+            <li><a href="#database">Spatial Database</a></li>
+            <li><a href="#gallery">Map Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Environmental Modules</h4>
+          <ul class="footer-links">
+            <li><a href="#analytics">Environmental Analytics</a></li>
+            <li><a href="#disaster">Disaster Management</a></li>
+            <li><a href="#references">References & Sources</a></li>
+            <li><a href="#developer">About Developer</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Academic Credits</h4>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: #cbd5e1;">
+            <strong>Developer:</strong> HAINA L. HERON<br>
+            <strong>Email:</strong> hainalheron@2005<br>
+            <strong>Program:</strong> MSc Geography & Disaster Management<br>
+            <strong>University:</strong> Sree Sankaracharya University of Sanskrit, Kalady, Kerala, India.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Bharathapuzha River Basin WebGIS Portal. Developed by HAINA L. HERON.
+        </div>
+        <div>
+          Sree Sankaracharya University of Sanskrit, Kalady, Kerala, India
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Map Gallery -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <div class="lightbox-content">
+      <img src="" alt="Enlarged Map" class="lightbox-img" id="lightboxImg">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <!-- Custom Master Script -->
+  <script src="script.js"></script>
+</body>
+</html>
